@@ -1,1 +1,1 @@
-.mv-input-search{background:none}/*# sourceMappingURL=searchinput.css.map */
+.mv-search{display:flex;align-items:center}.mv-search-icon svg{width:30px;height:30px}.mv-search-icon svg path{fill:#acacac}.mv-search-input{background:none;border:none;font-size:1.2rem;outline:none;padding-left:10px;width:100%;height:40px;color:#a1a1a1}.mv-search-input::placeholder{color:#acacac}/*# sourceMappingURL=SearchInput.css.map */

@@ -1,7 +1,17 @@
 import React from 'react';
-import './styles/InputSearch.css';
-export default function InputSearch() {
+import { FaSearch } from "react-icons/fa";
+import "./styles/SearchInput.css";
+export default function SearchInput() {
   return (
-    <input type="text" className="mv-input-search"/>
+    <div className="mv-search">
+      <div className="mv-search-icon">
+        <FaSearch />
+      </div>
+      <input
+        type="text"
+        className="mv-search-input"
+        placeholder="Buscar usuário"
+      />
+    </div>
   );
 };
