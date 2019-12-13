@@ -1,7 +1,23 @@
 import React from 'react';
-import {Route} from 'react-router-dom';
-export const GuestRoute = ({component: Component, ...rest}) => {
-  return <Route {...rest} render={props => <Component {...props} />} />;
+import {connect} from 'react-redux';
+import {Route,Redirect} from 'react-router-dom';
+export const GuestRoute = ({component: Component, token, ...rest}) => {
+  return (
+    <Route
+      {...rest}
+      render={props =>
+        token === null ? (
+          <Component {...props} />
+        ) : (
+          <Redirect
+            to={{ pathname: "/", state: { from: props.location } }}
+          />
+        )
+      }
+    />
+  );
 }
-
-export default GuestRoute;
+const mapStateToProps = state => ({
+  token: state.user.token
+});
+export default connect(mapStateToProps)(GuestRoute);

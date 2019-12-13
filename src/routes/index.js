@@ -10,8 +10,20 @@ export default function Routes() {
       <PersistGate loading={null} persistor={persistor}>
         <BrowserRouter>
           <Switch>
-            <GuestRoute exact path="/" component={() => <h1>Entrar</h1>} />
-            <Route path="*" component={() => <h1>sdsdsd</h1>}></Route>
+            <Route 
+              exact
+              path="/" 
+              component={() => <h1>Inicio</h1>} 
+            />
+            <GuestRoute
+              exact
+              path="/entrar"
+              component={() => <h1>Entrar</h1>}
+            />
+            <Route 
+              path="*"
+              component={() => <h1>Página não encontrada</h1>} 
+            />
           </Switch>
         </BrowserRouter>
       </PersistGate>

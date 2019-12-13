@@ -1,6 +1,6 @@
 const INITIAL_STATE = {
   token: null,
-  user: []
+  info: []
 };
 
 function user(state = INITIAL_STATE, action) {
