@@ -1,42 +1,31 @@
-import React, {useState, useEffect} from 'react';
+import React from "react";
+import {connect} from "react-redux";
+import {useParams} from "react-router-dom";
+import {Row, Col} from "react-grid-system";
 import Layout from '../../components/Layout';
 import Content, {ContentHeader,ContentBody} from '../../components/Content';
 import {
-    User,
-    Users, 
-    Body, 
-    Avatar,
-    Username, 
-    Footer,
-    Action,
-  } 
-from '../../components/Users';
-import InputSearch from '../../components/SearchInput';
+  User,
+  Users,
+  Body,
+  Avatar,
+  Username,
+  Footer,
+  Action
+} from "../../components/Users";
 import { Api } from "../../services/api";
 
-export default function MainPage() {
-  const [search, setSearch] = useState('');
-  const [result, setResult] = useState([]);
-  useEffect(() => {
-    async function searchUsers() {
-      if (search.length >= 4) {
-        const response = await Api.get(`search/users?q=${search}`);
-        const { items } = response.data;
-        setResult(items);
-      }
-    }
-    searchUsers();
-  }, [search]);
+function UserFavoriteUsersPage({ favoriteUsers, dispatch }) {
   return (
     <Layout>
       <Content>
         <ContentHeader>
-          <InputSearch onChange={value => setSearch(value)} />
+          <strong>Meus usuários favoritos</strong>
         </ContentHeader>
         <ContentBody>
-          {result.length > 0 ? (
+          {favoriteUsers.length > 0 ? (
             <Users>
-              {result.map(user => (
+              {favoriteUsers.map(user => (
                 <User>
                   <Body>
                     <Avatar url={`${user.avatar_url}`} />
@@ -58,3 +47,7 @@ export default function MainPage() {
     </Layout>
   );
 };
+const mapStateToProps = state => ({
+  favoriteUsers: state.user.favoriteUsers
+});
+export default connect(mapStateToProps)(UserFavoriteUsersPage);

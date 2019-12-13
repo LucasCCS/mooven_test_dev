@@ -1,7 +1,6 @@
 import axios from 'axios';
 import {store} from '../store';
 import rateLimit from "axios-rate-limit";
-export const CancelToken = axios.CancelToken;
 
 export const Api = rateLimit(
   axios.create({

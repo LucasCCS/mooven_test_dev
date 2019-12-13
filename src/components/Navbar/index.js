@@ -33,13 +33,13 @@ export function Navbar({token,info,dispatch}) {
               </a>
             </li>
             <li className="mv-navbar-list-item">
-              <a href="favoritos/repositorios">
+              <a href="/user/favorite/repositories">
                 <FaBookmark />
                 <span>Repositórios favoritos</span>
               </a>
             </li>
             <li className="mv-navbar-list-item">
-              <a href="favoritos/usuarios">
+              <a href="/user/favorite/users">
                 <FaStar />
                 <span>Usuários favoritos</span>
               </a>
