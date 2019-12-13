@@ -7,8 +7,11 @@ export const User = ({ children }) => (
 );
 export const Users = ({ children }) => <section className="mv-card-user-list">{children}</section>
 
-export const Avatar = ({ avatar_url }) => (
-  <div className="mv-card-user-item-avatar" style={{ backgroundImage: `url('${avatar_url}')`}} />
+export const Avatar = ({ url }) => (
+  <div
+    className="mv-card-user-item-avatar"
+    style={{ backgroundImage: `url('${url}')` }}
+  />
 );
 export const Username = ({ children }) => (
   <strong className="mv-card-user-item-username">{children}</strong>
@@ -25,7 +28,7 @@ export const Body = ({children}) => (
 export const Footer = ({ children }) => (
   <div className="mv-card-user-item-footer">{children}</div>
 );
-export const Action = ({ children }) => (
-  <button type="button" className="mv-card-user-item-footer-btn">{children}</button>
+export const Action = ({ children, href }) => (
+  <a href={href} className="mv-card-user-item-footer-btn">{children}</a>
 );
 export default User;

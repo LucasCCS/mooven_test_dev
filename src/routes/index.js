@@ -6,8 +6,9 @@ import {BrowserRouter, Route, Switch} from "react-router-dom";
 import GuestRoute from './GuestRoute';
 
 // pages
-import MainPage from '../pages/Main';
-import LoginPage from '../pages/Login';
+import MainPage from "../pages/Main";
+import AuthPage from "../pages/Auth";
+import UserPage from "../pages/Users";
 
 export default function Routes() {
   return (
@@ -16,11 +17,8 @@ export default function Routes() {
         <BrowserRouter>
           <Switch>
             <Route exact path="/" component={MainPage} />
-            <GuestRoute
-              exact
-              path="/entrar"
-              component={LoginPage}
-            />
+            <Route exact path="/users/:login" component={UserPage} />
+            <GuestRoute path="/auth" component={AuthPage} />
             <Route path="*" component={() => <h1>Página não encontrada</h1>} />
           </Switch>
         </BrowserRouter>
