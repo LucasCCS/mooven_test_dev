@@ -1,8 +1,18 @@
 import React from 'react';
+import {Container, Row, Col} from 'react-grid-system';
 import './styles/Layout.css';
-import {Container} from 'react-grid-system';
-const Layout = ({children}) => {
-return <Container>{children}</Container>;
+import Navbar from '../Navbar';
+const Layout = ({children, size}) => {
+return (
+    <Container>
+      <Row className="mv-layout-wrapper">
+        <Col lg={size} >
+          <Navbar />
+          {children}
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default Layout;

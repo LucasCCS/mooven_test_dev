@@ -7,6 +7,7 @@ import GuestRoute from './GuestRoute';
 
 // pages
 import MainPage from '../pages/Main';
+import LoginPage from '../pages/Login';
 
 export default function Routes() {
   return (
@@ -18,7 +19,7 @@ export default function Routes() {
             <GuestRoute
               exact
               path="/entrar"
-              component={() => <h1>Entrar</h1>}
+              component={LoginPage}
             />
             <Route path="*" component={() => <h1>Página não encontrada</h1>} />
           </Switch>

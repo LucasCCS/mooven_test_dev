@@ -1,0 +1,29 @@
+.mv-repositories {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  &-repository {
+    background-color: #fff;
+    box-shadow: 0px 3px 6px rgba(0,0,0,.1);
+    margin-top: 10px;
+    padding: 20px;
+    &-title {
+      display: flex;
+      align-items: center;
+      span {
+        color: #B2B2B2;
+        font-weight: 400;
+        font-size: 18px;
+      }
+      svg {
+        path {
+          fill:#EC6212;
+        }
+      }
+    }
+    &-description {
+      color: #B2B2B2;
+      font-size: .8rem;
+      font-weight: 300;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+.mv-tags {
+  display: flex;
+  margin-top: 10px;
+  &-tag {
+    background-color: #E4EBF5;
+    color: #909090;
+    font-size: .8rem;
+    font-weight: 400;
+    padding: 5px 25px;
+    border-radius: 40px;
+  }
+  &-tag + &-tag {
+    margin-left: 10px;
+  }
+}
+
+.php {
+  background-color: #E7864E;
+  color: #fff;
+}
