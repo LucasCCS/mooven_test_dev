@@ -1,9 +1,5 @@
-import React, {useEffect,useState} from 'react';
+import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
-import Layout from '../../components/Layout';
-import Content, { ContentHeader, ContentBody } from '../../components/Content';
-import Button from '../../components/Button';
-import Input from '../../components/Input';
 import { Api, AuthApi } from "../../services/api";
 
 export function AuthPage({ code, dispatch }) {
@@ -15,8 +11,8 @@ export function AuthPage({ code, dispatch }) {
         const tokenAccess = await AuthApi.post(
           `login/oauth/access_token`,
           {
-            client_id: "51611dfc8c071d25f07b",
-            client_secret: "53b788f1d24cdaefeb7117907eda1c1bfc82e1a5",
+            client_id: process.env.REACT_APP_CLIENT_ID,
+            client_secret: process.env.REACT_APP_CLIENT_SECRET,
             code: clientCode
           },
           {
@@ -45,7 +41,11 @@ export function AuthPage({ code, dispatch }) {
     } catch (err) {}
   }, [dispatch]);
   
-  return <h1>Aguarde um momento..</h1>
+  return (
+    <div>
+
+    </div>
+  )
 };
 
 export default connect(() => ({}))(AuthPage);

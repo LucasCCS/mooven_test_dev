@@ -56,7 +56,9 @@ export function Navbar({token,info,dispatch}) {
               <span>Já possui usuário?</span>
             </li>
             <li className="mv-navbar-list-item">
-              <a href="https://github.com/login/oauth/authorize?client_id=51611dfc8c071d25f07b&scope=user:name">
+              <a
+                href={`https://github.com/login/oauth/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=${REACT_APP_GITHUB_AUTH_SCOPE}`}
+              >
                 <Button color="primary">Entrar</Button>
               </a>
             </li>
