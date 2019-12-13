@@ -9,6 +9,7 @@
     "axios": "^0.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-grid-system": "^6.0.7",
     "react-redux": "^7.1.3",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.3.0",
@@ -19,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sass": "sass --watch ./src/components/./:./src/components/./ ./src/pages/./:./src/pages/./ --style compressed"
   },
   "eslintConfig": {
     "extends": "react-app"
