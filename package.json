@@ -1,7 +1,6 @@
 {
   "name": "moveen_test_frontend",
   "version": "0.1.0",
-  "homepage": "https://lucasccs.github.io/mooven_test_dev/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
@@ -26,7 +25,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "sass": "sass --watch ./src/components/./:./src/components/./ ./src/pages/./:./src/pages/./ --style compressed",
-    "predepoly": "npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
@@ -44,7 +43,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "gh-pages": "^2.1.1"
-  }
+  "devDependencies": {}
 }
