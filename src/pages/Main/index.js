@@ -51,16 +51,19 @@ function MainPage({ token, favoriteUsers, dispatch }) {
               {result.map(user => (
                 <User>
                   <Body>
-                    <FavoriteUser
-                      user={user}
-                      dispatch={dispatch}
-                      status={
-                        favoriteUsers.filter(item => item.login === user.login)
-                          .length > 0
-                          ? "true"
-                          : "false"
-                      }
-                    />
+                    {token !== null && (
+                      <FavoriteUser
+                        user={user}
+                        dispatch={dispatch}
+                        status={
+                          favoriteUsers.filter(
+                            item => item.login === user.login
+                          ).length > 0
+                            ? "true"
+                            : "false"
+                        }
+                      />
+                    )}
                     <Avatar url={`${user.avatar_url}`} />
                     <Username>{user.login}</Username>
                   </Body>
