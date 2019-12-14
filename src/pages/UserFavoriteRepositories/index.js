@@ -29,7 +29,7 @@ function UserFavoriteRepositoriesPage({ favoriteRepos, dispatch }) {
           {favoriteRepos.length > 0 ? (
             <Repositories>
               {favoriteRepos.map(repo => (
-                <Repository>
+                <Repository key={repo.id}>
                   <RemoveRepository
                     repo={repo}
                     dispatch={dispatch}

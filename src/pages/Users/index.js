@@ -100,7 +100,7 @@ function UserPage({favoriteRepos, favoriteUsers, dispatch, token }) {
                 {repositories.length > 0 ? (
                   <Repositories>
                     {repositories.map(repo => (
-                      <Repository>
+                      <Repository key={repo.id}>
                         {token != null ? (
                           <FavoriteRepository
                             repo={repo}

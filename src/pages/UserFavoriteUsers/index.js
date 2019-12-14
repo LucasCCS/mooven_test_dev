@@ -33,7 +33,7 @@ function UserFavoriteUsersPage({ favoriteUsers, dispatch }) {
           {favoriteUsers.length > 0 ? (
             <Users>
               {favoriteUsers.map(user => (
-                <User>
+                <User key={user.node_id}>
                   <Body>
                     <RemoveUser user={user} dispatch={dispatch} />
                     <Avatar url={`${user.avatar_url}`} />

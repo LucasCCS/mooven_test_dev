@@ -49,7 +49,7 @@ function MainPage({ token, favoriteUsers, dispatch }) {
           ) : result.length > 0 ? (
             <Users>
               {result.map(user => (
-                <User>
+                <User key={user.node_id}>
                   <Body>
                     {token !== null && (
                       <FavoriteUser
