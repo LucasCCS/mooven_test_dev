@@ -62,13 +62,6 @@ function UserPage({favoriteRepos, favoriteUsers, dispatch, token }) {
       : setIsUserFavorited(false);
   }, [user, favoriteUsers]);
 
-  function handlerAddRepoFavorite(repo) {
-    dispatch({
-      type: "UPDATE_FAVORITE_REPOS",
-      repo
-    });
-  }
-
   return (
     <Layout>
       <Content>
