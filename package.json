@@ -24,9 +24,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "sass": "sass --watch ./src/components/./:./src/components/./ ./src/pages/./:./src/pages/./ --style compressed",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "sass": "sass --watch ./src/components/./:./src/components/./ ./src/pages/./:./src/pages/./ --style compressed"
   },
   "eslintConfig": {
     "extends": "react-app"
