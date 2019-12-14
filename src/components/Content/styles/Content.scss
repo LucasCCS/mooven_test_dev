@@ -4,8 +4,23 @@
   &-header {
     background-color: #E4EBF5;
     padding: 20px;
+    display: flex;
+    align-items: center;
     span {
       color: #ACACAC;
+    }
+    svg {
+      width: 30px;
+      height: 30px;
+      path {
+        fill: #ACACAC;
+      }
+    }
+    &-title {
+      margin-left: auto;
+      font-size: 18px;
+      color: #ACACAC;
+      font-weight: 400;
     }
   }
   &-body {

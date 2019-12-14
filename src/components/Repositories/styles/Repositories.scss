@@ -3,10 +3,11 @@
   grid-template-columns: repeat(2,1fr);
   column-gap: 20px;
   &-repository {
+    position: relative;
     background-color: #fff;
     box-shadow: 0px 3px 6px rgba(0,0,0,.1);
     margin-top: 10px;
-    padding: 20px;
+    padding: 30px 20px 20px 20px;
     &-title {
       display: flex;
       align-items: center;
@@ -25,6 +26,58 @@
       color: #B2B2B2;
       font-size: .8rem;
       font-weight: 300;
+    }
+    &-favorite {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      outline: none;
+      svg {
+        width: 25px;
+        height: 25px;
+        path {
+          fill: #BEBEBE;
+          &:hover {
+            fill: #FFC91B;
+          }
+        }
+      }
+      &-true {
+        svg {
+          path {
+            fill: #FFC91B !important;
+          }
+        }
+      }
+    }
+    &-auth-alert {
+      position: absolute;
+      color: #ccc;
+      right: 10px;
+      top: 10px;
+      font-size: 10px;
+    }
+     &-remove {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      outline: none;
+      svg {
+        width: 25px;
+        height: 25px;
+        path {
+          fill: #BEBEBE;
+          &:hover {
+            fill: #f04141;
+          }
+        }
+      }
     }
   }
 }

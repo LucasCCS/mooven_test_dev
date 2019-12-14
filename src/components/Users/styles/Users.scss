@@ -8,11 +8,14 @@
     background-color: #fff;
     box-shadow: 0px 3px 6px rgba(0,0,0,.1);
     margin-top: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     &-body {
+      position: relative;
       display: flex;
       flex-direction: column;
       text-align: center;
-      padding: 20px 40px;
+      padding: 30px 40px;
     }
     &-username {
       font-size: 18px;
@@ -43,6 +46,51 @@
       border-radius: 100%;
       margin: 0 auto;
     }
+    &-favorite {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      outline: none;
+      svg {
+        width: 25px;
+        height: 25px;
+        path {
+          fill: #BEBEBE;
+          &:hover {
+            fill: #FFC91B;
+          }
+        }
+      }
+      &-true {
+        svg {
+          path {
+            fill: #FFC91B !important;
+          }
+        }
+      }
+    }
+    &-remove {
+      position: absolute;
+      right: 15px;
+      top: 15px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      outline: none;
+      svg {
+        width: 25px;
+        height: 25px;
+        path {
+          fill: #BEBEBE;
+          &:hover {
+            fill: #f04141;
+          }
+        }
+      }
+    }
     &-footer {
       &-btn {
         border: none;
@@ -56,6 +104,8 @@
         box-sizing: border-box;
         text-align: center;
         text-decoration: none;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
       }
     }
   }

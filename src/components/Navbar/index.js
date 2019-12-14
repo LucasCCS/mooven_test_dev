@@ -57,7 +57,7 @@ export function Navbar({token,info,dispatch}) {
             </li>
             <li className="mv-navbar-list-item">
               <a
-                href={`https://github.com/login/oauth/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=${REACT_APP_GITHUB_AUTH_SCOPE}`}
+                href={`https://github.com/login/oauth/authorize?client_id=${process.env.REACT_APP_CLIENT_ID}&scope=${process.env.REACT_APP_GITHUB_AUTH_SCOPE}`}
               >
                 <Button color="primary">Entrar</Button>
               </a>

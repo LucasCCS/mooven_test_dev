@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import { Api, AuthApi } from "../../services/api";
-
+import Loading from "../../components/Loading";
 export function AuthPage({ code, dispatch }) {
   useEffect(() => {
     try {
@@ -42,10 +42,16 @@ export function AuthPage({ code, dispatch }) {
   }, [dispatch]);
   
   return (
-    <div>
-
+    <div
+      style={{
+        minHeight: "100vh",
+        width: "100%",
+        display: "flex"
+      }}
+    >
+      <Loading type="Oval" color="#EC6212" size={150} />
     </div>
-  )
+  );
 };
 
 export default connect(() => ({}))(AuthPage);

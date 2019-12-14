@@ -1,9 +1,12 @@
 import React from "react";
 import {connect} from "react-redux";
-import {useParams} from "react-router-dom";
-import {Row, Col} from "react-grid-system";
 import Layout from '../../components/Layout';
-import Content, {ContentHeader,ContentBody} from '../../components/Content';
+import Content, {
+  ContentHeader,
+  ContentBody,
+  ContentHeaderBack,
+  ContentHeaderTitle,
+} from "../../components/Content";
 import {
   User,
   Users,
@@ -11,16 +14,20 @@ import {
   Avatar,
   Username,
   Footer,
-  Action
+  Action,
+  Location,
+  Bio,
+  RemoveUser,
 } from "../../components/Users";
-import { Api } from "../../services/api";
+import EmptyList from "../../components/EmptyList";
 
 function UserFavoriteUsersPage({ favoriteUsers, dispatch }) {
   return (
     <Layout>
       <Content>
         <ContentHeader>
-          <strong>Meus usuários favoritos</strong>
+          <ContentHeaderBack />
+          <ContentHeaderTitle>Meus usuários favoritos</ContentHeaderTitle>
         </ContentHeader>
         <ContentBody>
           {favoriteUsers.length > 0 ? (
@@ -28,8 +35,11 @@ function UserFavoriteUsersPage({ favoriteUsers, dispatch }) {
               {favoriteUsers.map(user => (
                 <User>
                   <Body>
+                    <RemoveUser user={user} dispatch={dispatch} />
                     <Avatar url={`${user.avatar_url}`} />
                     <Username>{user.login}</Username>
+                    {user.location && <Location>{user.location}</Location>}
+                    {user.bio && <Bio>{user.bio}</Bio>}
                   </Body>
                   <Footer>
                     <Action href={`/users/${user.login}`}>
@@ -40,7 +50,9 @@ function UserFavoriteUsersPage({ favoriteUsers, dispatch }) {
               ))}
             </Users>
           ) : (
-            ""
+            <EmptyList>
+              Você não possui nenhum usuário em sua lista de favoritos.
+            </EmptyList>
           )}
         </ContentBody>
       </Content>

@@ -11,12 +11,13 @@ export const Api = rateLimit(
       Accept: "application/json"
     }
   }),
-  { maxRequests: 2, perMilliseconds: 1000, maxRPS: 2 }
+  { maxRequests: 2, perMilliseconds: 1500, maxRPS: 2 }
 );
 
 Api.interceptors.request.use(
   config => {
-    config.headers["Authorization"] = `Token ${store.getState().user.token}`;
+    if (store.getState().user.token !== null)
+      config.headers["Authorization"] = `Token ${store.getState().user.token}`;
     return config;
   },
   error => Promise.reject(error)
