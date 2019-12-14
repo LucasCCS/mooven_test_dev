@@ -2,7 +2,7 @@ import React from 'react';
 import {Provider} from 'react-redux';
 import {PersistGate} from "redux-persist/integration/react";
 import {persistor, store} from '../store';
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GuestRoute from './GuestRoute';
 import PrivateRoute from "./PrivateRoute";
 
